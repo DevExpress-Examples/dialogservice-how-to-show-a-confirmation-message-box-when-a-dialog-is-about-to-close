@@ -1,7 +1,6 @@
+# DialogService - How to show a confirmation message box when a dialog is about to close
 
-# DialogService - How to prevent a dialog from being closed
-
-In this example, you can see how to handle the moment when a dialog shown with the help of DialogService is closed. You can use this approach, for example, to perform custom logic or confirm closing. 
+In this example, you can see how to handle the moment when a dialog shown with the help of DialogService is closed and confirm closing by showing a separate MessageBox. 
 
 To do this, you need to implement the **IDialogDocumentContent** interface in the dialog's ViewModel and implement this interface's **OnCloseAsync** method. DialogService calls this method when an end-user's action leads to closing your dialog. 
 
