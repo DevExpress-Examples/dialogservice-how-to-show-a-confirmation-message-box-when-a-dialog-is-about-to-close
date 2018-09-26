@@ -1,0 +1,36 @@
+﻿<UserControl
+    x:Class="dxDialog1.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxmvvmui="using:DevExpress.Mvvm.UI"
+    xmlns:dxmvvm="using:DevExpress.Mvvm.UI.Interactivity"
+    xmlns:ViewModels="using:dxDialog1.ViewModels"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    
+    <UserControl.DataContext>
+        <ViewModels:MainViewModel/>
+    </UserControl.DataContext>
+
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvmui:DialogService  >
+            <dxmvvmui:DialogService.DialogStyle>
+                <Style TargetType="dxmvvmui:DialogContentControl">
+                    <Setter Property="Width" Value="500" />
+                    <Setter Property="Height" Value="260" />
+                </Style>
+            </dxmvvmui:DialogService.DialogStyle>
+        </dxmvvmui:DialogService>
+        <dxmvvmui:MessageBoxService/>
+    </dxmvvm:Interaction.Behaviors>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Button HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Command="{Binding ShowDialogCommand}"
+                Content="Show Dialog" />
+    </Grid>
+</UserControl>
