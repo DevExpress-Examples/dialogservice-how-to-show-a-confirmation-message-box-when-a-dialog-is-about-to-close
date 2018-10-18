@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks;
-using DevExpress.Mvvm;
+﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.UI;
+using System.Threading.Tasks;
 
 namespace dxDialog1.ViewModels {
     public class DialogViewModel : ViewModelBase, IDialogDocumentContent {
 
         public string Caption { get; set; } = "This dialog window cannot be canceled until you click Yes in the confirmation message box. ";
+        public IDialogDocumentOwner Dialog { get; set; }
 
         protected IMessageBoxService MessageBoxService { get { return this.GetService<IMessageBoxService>(); } }
 
