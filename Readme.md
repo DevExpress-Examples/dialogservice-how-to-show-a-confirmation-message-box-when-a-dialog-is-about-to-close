@@ -7,7 +7,7 @@ To do this, you need to implement the **IDialogDocumentContent** interface in th
 In the current implementation, when an end-user clicks the Cancel button in the dialog window, a confirmation MessageBox is shown. If an end-user clicks No, the dialog window will remain visible: 
 
 * **C#:**
-```
+```cs
     public async Task OnCloseAsync(ClosingDialogEventArgs e) {
         if(this.MessageBoxService != null && (MessageResult)e.Id == MessageResult.Cancel)
         {
@@ -23,7 +23,7 @@ In the current implementation, when an end-user clicks the Cancel button in the 
 
 * **Visual Basic:**
 
-```
+```vb
     Public Async Function OnCloseAsync(ByVal e As ClosingDialogEventArgs) As Task
         If Me.MessageBoxService IsNot Nothing AndAlso CType(e.Id, MessageResult) = MessageResult.Cancel Then
             Dim result = Await Me.MessageBoxService.ShowAsync("Do you really want to cancel this dialog?", "Confirmation", MessageButton.YesNo)
