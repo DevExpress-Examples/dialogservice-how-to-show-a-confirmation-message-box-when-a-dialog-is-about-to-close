@@ -7,6 +7,7 @@ Public Class DialogViewModel
 
     Public Property Caption As String = "This dialog window cannot be canceled until you click Yes in the confirmation message box. "
     Public Property Dialog As IDialogDocumentOwner Implements IDialogDocumentContent.Dialog
+    Public Property IsOpen As Boolean Implements IDialogDocumentContent.IsOpen
 
     Protected ReadOnly Property MessageBoxService As IMessageBoxService
         Get
